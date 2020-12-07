@@ -1,9 +1,12 @@
 import Head from 'next/head'
 
 import { getAllPostIds, getPostData } from '../../lib/posts'
-import utilStyles from '../../styles/utils.module.css'
 import Layout from '../../components/layout'
 import Date from '../../components/date'
+import {
+  Container,
+  DateContainer
+} from '../../styles/pages/Posts'
 
 export async function getStaticProps({ params }) {
   const postData = await getPostData(params.id)
@@ -28,13 +31,15 @@ export default function Post({ postData }) {
       <Head>
         <title>{postData.title}</title>
       </Head>
-      <article>
-        <h1 className={utilStyles.headingXl}>{postData.title}</h1>
-        <div className={utilStyles.lightText}>
+      <Container>
+        <h1>{postData.title}</h1>
+
+        <DateContainer>
           <Date dateString={postData.date} />
-        </div>
+        </DateContainer>
+        
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-      </article>
+      </Container>
     </Layout>
     )
   }
