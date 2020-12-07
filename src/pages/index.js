@@ -15,10 +15,6 @@ export default function Home({ allPostsData }) {
       </Head>
       <section className={utilStyles.headingMd}>
         <p>Desenvolvedor Full Stack JS/TS.</p>
-        <p>
-          (Você pode construir um site como esse no{' '}
-          <a href="https://nextjs.org/learn">tutorial oficial de Next.js</a>.)
-        </p>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
