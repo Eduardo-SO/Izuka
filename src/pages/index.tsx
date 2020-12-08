@@ -1,17 +1,23 @@
+import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 
 import { getSortedPostsData } from '../lib/posts'
-
-import {
-  Heading,
-  BlogContainer,
-  List
-} from '../styles/pages/Home'
+import { Heading, BlogContainer, List } from '../styles/pages/Home'
 import Layout, { siteTitle } from '../components/layout'
 import Date from '../components/date'
 
-export default function Home({ allPostsData }) {
+interface Post {
+  id: string
+  date?: string
+  title?: string
+}
+
+interface HomeProps {
+  allPostsData: Post[]
+}
+
+const Home: React.FC<HomeProps> = ({ allPostsData }) => {
   return (
     <Layout home>
       <Head>
@@ -25,14 +31,14 @@ export default function Home({ allPostsData }) {
         <List>
           {allPostsData.map(({ id, date, title }) => (
             <li key={id}>
-            <Link href={`/posts/${id}`}>
-              <a>{title}</a>
-            </Link>
-            <br />
-            <small>
-              <Date dateString={date} />
-            </small>
-          </li>
+              <Link href={`/posts/${id}`}>
+                <a>{title}</a>
+              </Link>
+              <br />
+              <small>
+                <Date dateString={date} />
+              </small>
+            </li>
           ))}
         </List>
       </BlogContainer>
@@ -40,12 +46,14 @@ export default function Home({ allPostsData }) {
   )
 }
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const allPostsData = getSortedPostsData()
 
   return {
     props: {
-      allPostsData
-    }
+      allPostsData,
+    },
   }
 }
+
+export default Home

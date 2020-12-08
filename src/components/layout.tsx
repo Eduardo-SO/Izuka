@@ -2,16 +2,16 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
 
-import {
-  Container,
-  Header,
-  BackToHome
-} from '../styles/components/Layout'
+import { Container, Header, BackToHome } from '../styles/components/Layout'
+
+interface LayoutProps {
+  home: boolean
+}
 
 const name = 'Eduardo SO'
 export const siteTitle = 'Eduardo Souza de Oliveira'
 
-export default function Layout({ children, home }) {
+const Layout: React.FC<LayoutProps> = ({ children, home }) => {
   return (
     <Container>
       <Head>
@@ -23,7 +23,7 @@ export default function Layout({ children, home }) {
         <meta
           property="og:image"
           content={`https://og-image.now.sh/${encodeURI(
-            siteTitle
+            siteTitle,
           )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
         />
         <meta name="og:title" content={siteTitle} />
@@ -33,10 +33,10 @@ export default function Layout({ children, home }) {
         {home ? (
           <>
             <Image
-            src="/images/profile.png"
-            alt={name}
-            height={140}
-            width={140}
+              src="/images/profile.png"
+              alt={name}
+              height={140}
+              width={140}
             />
             <h1>{name}</h1>
           </>
@@ -45,10 +45,10 @@ export default function Layout({ children, home }) {
             <Link href="/">
               <a>
                 <Image
-                src="/images/profile.png"
-                alt={name}
-                height={110}
-                width={110}
+                  src="/images/profile.png"
+                  alt={name}
+                  height={110}
+                  width={110}
                 />
               </a>
             </Link>
@@ -71,3 +71,5 @@ export default function Layout({ children, home }) {
     </Container>
   )
 }
+
+export default Layout
