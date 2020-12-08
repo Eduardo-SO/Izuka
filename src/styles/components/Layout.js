@@ -11,6 +11,10 @@ export const Header = styled.header`
   flex-direction: column;
   align-items: center;
 
+  img {
+    border-radius: 50%;
+  }
+
   h1 {
     margin: 1rem 0;
 
@@ -29,20 +33,6 @@ export const Header = styled.header`
       color: inherit;
     }
   }
-`
-
-export const HeaderImage = styled.img`
-  width: 6rem;
-  height: 6rem;
-
-  border-radius: 50%;
-`
-
-export const HeaderHomeImage = styled.img`
-  width: 8rem;
-  height: 8rem;
-
-  border-radius: 50%;
 `
 
 export const BackToHome = styled.div`

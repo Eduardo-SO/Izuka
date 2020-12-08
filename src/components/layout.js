@@ -1,16 +1,15 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import Image from 'next/image'
 
 import {
   Container,
   Header,
-  HeaderImage,
-  HeaderHomeImage,
   BackToHome
 } from '../styles/components/Layout'
 
 const name = 'Eduardo SO'
-export const siteTitle = 'Next.js Sample Website'
+export const siteTitle = 'Eduardo Souza de Oliveira'
 
 export default function Layout({ children, home }) {
   return (
@@ -33,14 +32,24 @@ export default function Layout({ children, home }) {
       <Header>
         {home ? (
           <>
-            <HeaderHomeImage src="/images/profile.png" alt={name} />
+            <Image
+            src="/images/profile.png"
+            alt={name}
+            height={140}
+            width={140}
+            />
             <h1>{name}</h1>
           </>
         ) : (
           <>
             <Link href="/">
               <a>
-                <HeaderImage src="/images/profile.png" alt={name} />
+                <Image
+                src="/images/profile.png"
+                alt={name}
+                height={110}
+                width={110}
+                />
               </a>
             </Link>
             <h2>
