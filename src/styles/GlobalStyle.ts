@@ -17,9 +17,27 @@ export default createGlobalStyle`
 
 html,
 body {
+  @font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/fonts/Roboto/Roboto-Regular.ttf);
+  }
+
+  @font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(/fonts/Roboto/Roboto-Bold.ttf);
+  }
+  
   background: #000;
   
-  font: 400 1.6rem 'Roboto';
+  font-size: 1.6rem;
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
   line-height: 1.6;
 }
 
