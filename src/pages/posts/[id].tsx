@@ -1,31 +1,46 @@
+import { GetStaticPaths, GetStaticProps } from 'next'
 import Head from 'next/head'
 
 import { getAllPostIds, getPostData } from '../../lib/posts'
 import Layout from '../../components/layout'
 import Date from '../../components/date'
-import {
-  Container,
-  DateContainer
-} from '../../styles/pages/Posts'
+import { Container, DateContainer } from '../../styles/pages/Posts'
 
-export async function getStaticProps({ params }) {
+interface ParamPostId {
+  params: {
+    id: string
+  }
+}
+
+interface Post {
+  postData: {
+    id: string
+    title?: string
+    date?: string
+    contentHtml: string
+  }
+}
+
+export const getStaticProps: GetStaticProps = async ({
+  params,
+}: ParamPostId) => {
   const postData = await getPostData(params.id)
   return {
     props: {
-      postData
-    }
+      postData,
+    },
   }
 }
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
   const paths = getAllPostIds()
   return {
     paths,
-    fallback: false
+    fallback: false,
   }
 }
 
-export default function Post({ postData }) {
+const Post: React.FC<Post> = ({ postData }) => {
   return (
     <Layout>
       <Head>
@@ -37,10 +52,11 @@ export default function Post({ postData }) {
         <DateContainer>
           <Date dateString={postData.date} />
         </DateContainer>
-        
+
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </Container>
     </Layout>
-    )
-  }
-  
+  )
+}
+
+export default Post

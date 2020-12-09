@@ -4,12 +4,26 @@ export const Container = styled.article`
   display: flex;
   flex-direction: column;
 
+  h1,
+  h2,
+  h3,
+  p {
+    margin: 1.6rem 0px;
+  }
+
   h1 {
-    font-size: 2rem;
-    line-height: 1.3;
-    font-weight: 800;
-    letter-spacing: -0.05rem;
-    margin: 1rem 0;
+    font-size: 4.8rem;
+    line-height: 100%;
+  }
+
+  h2 {
+    font-size: 3.2rem;
+  }
+
+  ul {
+    display: block;
+    list-style-type: disc;
+    padding-left: 4rem;
   }
 `
 
