@@ -15,7 +15,8 @@ const Profile: React.FC = () => (
         <Image
           src="/images/profile.png"
           alt="Eduardo Souza de Oliveira"
-          layout="fill"
+          width={222}
+          height={222}
         />
       </ImageContainer>
       <h1>Eduardo Souza de Oliveira</h1>

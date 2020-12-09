@@ -63,6 +63,8 @@ export const SocialContainer = styled.div`
   a {
     display: flex;
     align-items: center;
+
+    height: 5.6rem;
     color: #fff;
     font-weight: 700;
 
@@ -77,9 +79,5 @@ export const SocialContainer = styled.div`
 
   @media (max-width: 980px) {
     flex-direction: column;
-
-    a:first-child {
-      margin-bottom: 0.8rem;
-    }
   }
 `
