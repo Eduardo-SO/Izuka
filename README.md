@@ -5,11 +5,11 @@
   <img src=".github/izuka.gif" />
 </p>
 
- **[izuka.com.br](http://nextjs.com)**
+ **[izuka.com.br](https://izuka.com.br/)**
 
  # Descrição
 
-Blog desenvolvido com **[Next.js](http://nextjs.com)**.
+Blog desenvolvido com **[Next.js](https://nextjs.org/)**.
 
 Geração de posts de forma estática através da funcionalidade de **SSG** *(Static Site Generation)*.
 
@@ -51,7 +51,7 @@ Conversão de conteúdo Markdown para HTML com a ferramenta **remark-html**.
 
 ## Baixando e executando
 
-- Para baixar a aplicação na sua máquina rode o seguinte comando no terminal:
+- Para baixar a aplicação na sua máquina, rode o seguinte comando no terminal:
 
 ```bash
 git clone https://github.com/Eduardo-SO/Izuka.git
