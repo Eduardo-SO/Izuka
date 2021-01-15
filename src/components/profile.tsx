@@ -34,7 +34,7 @@ const Profile: React.FC = () => (
           <FaGithub />
           Eduardo-SO
         </a>
-        <a href="https://www.linkedin.com/in/eduardo-s-242652103/">
+        <a href="https://www.linkedin.com/in/eduardo-so/">
           <FaLinkedin />
           Eduardo Souza de Oliveira
         </a>
